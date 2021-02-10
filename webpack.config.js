@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+    target: ['web', 'es5'],
+
     // entry: { index: path.resolve(__dirname, "source", "index.js") }, Permet de modifier l'entrypoint de Webpack
     module: {
         rules: [

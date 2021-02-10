@@ -1,6 +1,7 @@
 // import "./style.css";
 import "./style.scss"
 import { getUsers } from "./components/usersAPI";
+import "core-js";
 
 console.log("hello Webpack !");
 
