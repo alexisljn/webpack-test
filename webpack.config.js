@@ -32,5 +32,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html')
         })
-    ]
+    ],
+    optimization: {
+        splitChunks: {chunks: "all"}
+    }
 }
