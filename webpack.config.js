@@ -32,5 +32,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html')
         })
-    ]
+    ],
+
+    // devtool: false A CONDITIONNER pour le build
 }

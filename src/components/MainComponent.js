@@ -1,8 +1,5 @@
 import React, {Suspense} from "react";
-import regeneratorRuntime from "regenerator-runtime"; // Must be imported to use async/await
 import OneComponent from "./OneComponent";
-// import AnotherComponent from "./AnotherComponent";
-// const getAnotherComponentModule = () => import(/* webpackChunkName: "anotherComponent" */ "./AnotherComponent");
 const AnotherComponent = React.lazy(() => import(/* webpackChunkName: "anotherComponent" */ './AnotherComponent'));
 
 
@@ -14,7 +11,6 @@ class MainComponent extends React.Component {
             nicknames: ['toto', 'momo', 'jojo'],
             buttonActivated: false,
         };
-        console.log('MaiNComponentState', this.state);
     }
 
     onButtonClick() {
@@ -24,22 +20,8 @@ class MainComponent extends React.Component {
         });
     };
 
-    // async loadJSX() {
-    //     const AnotherComponent = await getAnotherComponentModule();
-    //     return <AnotherComponent/>;
-    // }
-
 
     render() {
-        // let AnotherComponent;
-        //
-        // if (this.state.buttonActivated) {
-        //     (async () => {
-        //         AnotherComponent  = await getAnotherComponentModule();
-        //         // const jsxComponent = <AnotherComponent/>;
-        //         console.log(AnotherComponent)
-        //     })()
-        // }
 
         return (
             <div>
@@ -47,7 +29,7 @@ class MainComponent extends React.Component {
                 {this.state.nicknames.map((nickname, index) => {
                     return (
                         <div>
-                            <OneComponent nickname={nickname}/>
+                            <OneComponent key={index} nickname={nickname}/>
                         </div>
 
                     )
