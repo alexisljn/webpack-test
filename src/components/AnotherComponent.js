@@ -1,4 +1,6 @@
 import React from "react";
+import regeneratorRuntime from "regenerator-runtime"; // Must be imported to use async/await
+const getUserModule = () => import(/* webpackChunkName: "usersAPI" */ "./usersAPI");
 
 class AnotherComponent extends React.Component {
 
@@ -6,13 +8,14 @@ class AnotherComponent extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-
+    async onButtonClick() {
+        const { getUsers } = await getUserModule();
+        console.log(await getUsers());
     }
 
     render() {
         return (
-            <p>Component ACTIVÉ !!!!</p>
+            <button onClick={() => this.onButtonClick()}>Load Users</button>
         );
     }
 

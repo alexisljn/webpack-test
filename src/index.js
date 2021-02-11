@@ -1,10 +1,10 @@
 // import "./style.css";
 import "./style.scss"
-import { getUsers } from "./components/usersAPI";
+// import { getUsers } from "./components/usersAPI";
 import "core-js";
 import 'whatwg-fetch';
 import MainComponent from "./components/MainComponent";
-import regeneratorRuntime from "regenerator-runtime"; // Must be imported to use async/await
+// import regeneratorRuntime from "regenerator-runtime"; // Must be imported to use async/await
 
 console.log("hello Webpack !");
 
