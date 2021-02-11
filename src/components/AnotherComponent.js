@@ -6,6 +6,10 @@ class AnotherComponent extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+
+    }
+
     render() {
         return (
             <p>Component ACTIVÉ !!!!</p>

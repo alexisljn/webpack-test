@@ -2,8 +2,8 @@ import React, {Suspense} from "react";
 import regeneratorRuntime from "regenerator-runtime"; // Must be imported to use async/await
 import OneComponent from "./OneComponent";
 // import AnotherComponent from "./AnotherComponent";
-const getAnotherComponentModule = () => import(/* webpackChunkName: "anotherComponent" */ "./AnotherComponent");
-const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
+// const getAnotherComponentModule = () => import(/* webpackChunkName: "anotherComponent" */ "./AnotherComponent");
+const AnotherComponent = React.lazy(() => import(/* webpackChunkName: "anotherComponent" */ './AnotherComponent'));
 
 
 class MainComponent extends React.Component {
