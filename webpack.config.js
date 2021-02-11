@@ -33,7 +33,7 @@ module.exports = {
             template: path.resolve(__dirname, 'src', 'index.html')
         })
     ],
-    optimization: {
-        splitChunks: {chunks: "all"}
-    }
+    // optimization: {
+        // splitChunks: {chunks: "all"}
+    // }
 }
