@@ -1,8 +1,10 @@
-import React from "react";
+import React, {Suspense} from "react";
 import regeneratorRuntime from "regenerator-runtime"; // Must be imported to use async/await
 import OneComponent from "./OneComponent";
 // import AnotherComponent from "./AnotherComponent";
 const getAnotherComponentModule = () => import(/* webpackChunkName: "anotherComponent" */ "./AnotherComponent");
+const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
+
 
 class MainComponent extends React.Component {
 
@@ -22,22 +24,22 @@ class MainComponent extends React.Component {
         });
     };
 
-    async loadJSX() {
-        const AnotherComponent = await getAnotherComponentModule();
-        return <AnotherComponent/>;
-    }
+    // async loadJSX() {
+    //     const AnotherComponent = await getAnotherComponentModule();
+    //     return <AnotherComponent/>;
+    // }
 
 
     render() {
-        let AnotherComponent;
-
-        if (this.state.buttonActivated) {
-            (async () => {
-                AnotherComponent  = await getAnotherComponentModule();
-                // const jsxComponent = <AnotherComponent/>;
-                console.log(AnotherComponent)
-            })()
-        }
+        // let AnotherComponent;
+        //
+        // if (this.state.buttonActivated) {
+        //     (async () => {
+        //         AnotherComponent  = await getAnotherComponentModule();
+        //         // const jsxComponent = <AnotherComponent/>;
+        //         console.log(AnotherComponent)
+        //     })()
+        // }
 
         return (
             <div>
@@ -54,8 +56,9 @@ class MainComponent extends React.Component {
                 <button onClick={() => this.onButtonClick()}>Click</button>
                 {this.state.buttonActivated
                     ?
-                        // 'toto'
-                        <AnotherComponent/>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <AnotherComponent/>
+                        </Suspense>
                     :
                         null
                 }
