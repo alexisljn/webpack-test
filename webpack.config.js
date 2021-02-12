@@ -36,9 +36,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html')
         }),
-        // new CompressionPlugin({
-        //     deleteOriginalAssets: true,
-        // })
+        new CompressionPlugin({
+            // deleteOriginalAssets: true,
+        })
     ],
     // devtool: false
     // A CONDITIONNER

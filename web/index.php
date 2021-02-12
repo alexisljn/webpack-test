@@ -8,8 +8,6 @@
 <h1>App React</h1>
 <div id="root"></div>
 <!--TODO LOAD REACT-->
-<script src="./dist/webpack-test.bundle.js"></script>
+<script src="./dist/main.js"></script>
 </body>
-</html>
-
-<?php
+</html>:
