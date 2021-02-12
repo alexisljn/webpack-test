@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 class OneComponent extends React.Component {
 
     constructor(props) {

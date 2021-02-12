@@ -20,10 +20,10 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: [require("@babel/plugin-transform-arrow-functions")]
-                    }
+                    // options: {
+                    //     presets: ['@babel/preset-env', '@babel/preset-react'],
+                    //     plugins: [require("@babel/plugin-transform-arrow-functions")]
+                    // }
                 }
             }
         ]
@@ -32,5 +32,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html')
         })
-    ]
-}
+    ],
+    // devtool: false
+    // A CONDITIONNER
+};
